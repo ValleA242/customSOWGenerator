@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Estimation Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="question-container">
+        <h2>Custom Scope of Work</h2>
+        <label for="numForms">How many forms needed?</label>
+        <input type="number" id="numForms" placeholder="0">
+
+        <label for="numConfigurations">How many additional configurations needed?</label>
+        <input type="number" id="numConfigurations" placeholder="0">
+
+        <label for="numDiscovery">Discovery (number of programs):</label>
+        <input type="number" id="numDiscovery" placeholder="0">
+
+        <label for="numDashboards">Number of Dashboards needed:</label>
+        <input type="number" id="numDashboards" placeholder="0">
+
+        <label for="numDemoInitial">Demonstration and testing for initial program (value of 1):</label>
+        <input type="number" id="numDemoInitial" placeholder="0">
+
+        <label for="numDemoAdditional">Demonstration and testing for additional programs:</label>
+        <input type="number" id="numDemoAdditional" placeholder="0">
+
+        <label for="numSimpleReports">Simple Reports:</label>
+        <input type="number" id="numSimpleReports" placeholder="0">
+
+        <label for="numMediumReports">Medium Reports:</label>
+        <input type="number" id="numMediumReports" placeholder="0">
+
+        <label for="numLargeReports">Large Reports:</label>
+        <input type="number" id="numLargeReports" placeholder="0">
+
+        <label for="numFieldsMigration">Number of fields to be migrated:</label>
+        <input type="number" id="numFieldsMigration" placeholder="0">
+
+        <label for="numFieldsMerges">Number of fields requiring merges:</label>
+        <input type="number" id="numFieldsMerges" placeholder="0">
+
+        <label for="numGoLiveSupport">Go live support hours (optional):</label>
+        <input type="number" id="numGoLiveSupport" placeholder="0">
+
+        <button onclick="calculateHours(); setHourTotal(); updateTable();">Calculate Hours</button>
+
+        <label for="totalHours">Total Hours:</label>
+        <input type="text" id="totalHours" readonly>
+    </div>
+
+    <div class="table-container">
+        <h2>Project Estimation Table</h2>
+        <table id="estimation-table">
+            <tr>
+                <th>Implementation Fees: Time and Materials</th>
+                <th>Hours Summary</th>
+                <th>Rate</th>
+                <th>Fee Summary</th>
+            </tr>
+            <tr>
+                <td id="discovery">Discovery</td>
+                <td id="discovery-hours"></td>
+                <td id="discovery-hours-summary"></td>
+                <td id="discovery-rate">$220</td>
+                <td id="discovery-fee-summary"></td>
+            </tr>
+            <tr>
+                <td id ="configuration">Configuration</td>
+                <td id="configuration-hours"></td>
+                <td id="configuration-hours-summary"></td>
+                <td id="configuration-rate">$220</td>
+                <td id="configuration-fee-summary"></td>
+            </tr>
+            <tr>
+                <td id="custom-reporting">Custom Reporting</td>
+                <td id="custom-reporting-hours"></td>
+                <td id="custom-reporting-hours-summary"></td>
+                <td id="custom-reporting-rate">$220</td>
+                <td id="custom-reporting-fee-summary"></td>
+            </tr>
+            <tr>
+                <td id="data-migration">Data Migration</td>
+                <td id="data-migration-hours"></td>
+                <td id="data-migration-hours-summary"></td>
+                <td id="data-migration-rate">$220</td>
+                <td id="data-migration-fee-summary"></td>
+            </tr>
+            <tr>
+                <td id="demo-and-testing">Demonstration and Testing</td>
+                <td id="demo-testing-hours"></td>
+                <td id="demo-testing-hours-summary"></td>
+                <td id="demo-testing-rate">$220</td>
+                <td id="demo-testing-fee-summary"></td>
+            </tr>
+            <tr>
+                <td id="go-live">Go Live Support</td>
+                <td id="go-live-support-hours"></td>
+                <td id="go-live-support-hours-summary"></td>
+                <td id="go-live-support-rate">$220</td>
+                <td id="go-live-support-fee-summary"></td>
+            </tr>
+            <tr>
+                <td id="close-out">Close Out and Transition to Support</td>
+                <td id="close-out-hours">1</td>
+                <td id="close-out-hours-summary">1</td>
+                <td id="close-out-rate">$220</td>
+                <td id="close-out-fee-summary">$220</td>
+            </tr>
+            <tr>
+                <td id="project-management">Project Management</td>
+                <td id="project-management-hours"></td>
+                <td id="project-management-hours-summary"></td>
+                <td id="project-management-rate">$220</td>
+                <td id="project-management-fee-summary"></td>
+            </tr>
+            <tr>
+                <td id="total-estimate">Total Estimate</td>
+                <td id="total-estimate-hours"></td>
+                <td id="total-estimate-hours-summary"></td>
+                <td></td>
+                <td id="total-estimate-fee-summary"></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+
+    <button onclick="generateDocument()">Generate Document</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
